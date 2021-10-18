@@ -49,7 +49,7 @@ plt.show()
 print(template.substitute(string='Test if crime rate in southern states is greater than in the non-southern'))
 southern = df.query('Southern==1').CrimeRate
 not_southern = df.query('Southern==0').CrimeRate
-_, p = stats.ttest_ind(southern, not_southern, alternative='less')
+_, p = stats.ttest_ind(southern, not_southern, alternative='greater')
 print(p > alpha)
 
 print(template.substitute(string='Build linear regression model for two sets'))
