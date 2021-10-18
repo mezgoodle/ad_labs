@@ -53,15 +53,14 @@ _, p = stats.ttest_ind(southern, not_southern, alternative='less')
 print(p > alpha)
 
 print(template.substitute(string='Build linear regression model for two sets'))
-(slope, intercept, rvalue, pvalue, stderr) = stats.linregress(wage, crime_rate)
+(slope, intercept, r_value, p_value, stderr) = stats.linregress(wage, crime_rate)
 print(f'y = {intercept} + {slope}x + e')
 # Plot linear regression line.
 wage_pred = intercept + slope*wage
-plt.scatter(wage, crime_rate, color="red", marker="o", label="Original data")
-plt.plot(wage, wage_pred, color="green", label="Fitted line")
+plt.scatter(wage, crime_rate, color='red', marker='o', label='Original data')
+plt.plot(wage, wage_pred, color='green', label='Fitted line')
 # Set labels
 plt.legend(loc='best')
 plt.xlabel('wage')
 plt.ylabel('crime_rate')
 plt.show()
-
