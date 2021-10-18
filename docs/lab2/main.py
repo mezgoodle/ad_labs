@@ -1,7 +1,5 @@
 import pandas as pd
-import scipy
 from scipy import stats
-import matplotlib
 import matplotlib.pyplot as plt
 
 from string import Template
