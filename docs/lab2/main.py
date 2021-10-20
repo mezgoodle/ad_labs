@@ -32,11 +32,11 @@ print(template.substitute(string='Dataframe'))
 print(df)
 
 print(template.substitute(string='Mean and median values for expenditure'))
-print(crime_rate.mean())
-print(crime_rate.median())
+print(expenditure.mean())
+print(expenditure.median())
 print(template.substitute(string='Mean and median values for expenditure after 10 years'))
-print(crime_rate_10.mean())
-print(crime_rate_10.median())
+print(expenditure_10.mean())
+print(expenditure_10.median())
 
 print(template.substitute(string='Test if sample differs from a normal distribution'))
 _, p = stats.normaltest(expenditure)
@@ -50,6 +50,7 @@ print(template.substitute(string='Test if crime rate in southern states is great
 southern = df.query('Southern==1').CrimeRate
 not_southern = df.query('Southern==0').CrimeRate
 _, p = stats.ttest_ind(southern, not_southern, alternative='greater')
+print(p)
 print(p > alpha)
 
 print(template.substitute(string='Build linear regression model for two sets'))
