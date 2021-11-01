@@ -16,4 +16,10 @@ b = pd.Series(['I', 'II', 'III'])
 multi_in = pd.MultiIndex.from_product([['A', 'B'], b, a])
 df = df[:-5]
 df.set_index([multi_in], inplace=True)
-
+print(df)
+print(df.mean(level=1))
+print(df.max(level=2))
+# s = pd.Series(df['CrimeRate'])
+# print(s[s > 100])
+# print(s[:, 'II', :])
+# print(s['A', 'II'])
